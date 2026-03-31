@@ -1,0 +1,116 @@
+{
+    "productos": [
+        {
+            "id": 3,
+            "img": "/img-bambu.png",
+            "nombre": "Bambu",
+            "precio": 10000,
+            "ambiente": "Interior/Exterior 🏡☀️"
+        },
+        {
+            "id": 14,
+            "img": "/img-camelias.png",
+            "nombre": "Camelias",
+            "precio": 8000,
+            "ambiente": "Exterior ☀️"
+        },
+        {
+            "id": 16,
+            "img": "/img-castaño-de-la-suerte.png",
+            "nombre": "Pachira aquatica",
+            "precio": 15000,
+            "ambiente": "Interior 🏡"
+        },
+        {
+            "id": 7,
+            "img": "/img-ceriman.png",
+            "nombre": "Cerimán",
+            "precio": 6000,
+            "ambiente": "Interior 🏡"
+        },
+        {
+            "id": 1,
+            "img": "/img-suculentas.png",
+            "nombre": "Suculentas",
+            "precio": 10000,
+            "ambiente": "Interior/Exterior 🏡☀️"
+        },
+        {
+            "id": 6,
+            "img": "/img-lirios-de-la-paz.png",
+            "nombre": "Lirios de la paz",
+            "precio": 18000,
+            "ambiente": "Interior 🏡"
+        },
+        {
+            "id": 9,
+            "img": "/img-calendulas.png",
+            "nombre": "Caléndulas",
+            "precio": 20000,
+            "ambiente": "Exterior ☀️"
+        },
+        {
+            "id": 32,
+            "img": "/img-potos-dorados.png",
+            "nombre": "Potos dorados",
+            "precio": 14500,
+            "ambiente": "Interior 🏡"
+        },
+        {
+            "id": 22,
+            "img": "/img-planta-serpiente.png",
+            "nombre": "Planta serpiente",
+            "precio": 15000,
+            "ambiente": "Interior 🏡"
+        },
+        {
+            "id": 5,
+            "img": "/img-cirsantemos.png",
+            "nombre": "Crisantemos",
+            "precio": 16200,
+            "ambiente": "Exterior ☀️"
+        },
+        {
+            "id": 23,
+            "img": "/img-boj-bola.png",
+            "nombre": "Bog bola",
+            "precio": 9500,
+            "ambiente": "Exterior ☀️"
+        },
+        {
+            "id": 11,
+            "img": "/img-jade.png",
+            "nombre": "Jade",
+            "precio": 13000,
+            "ambiente": "Interior 🏡"
+        },
+        {
+            "id": 19,
+            "img": "/img-petunias.png",
+            "nombre": "Petunias",
+            "precio": 6500,
+            "ambiente": "Exterior ☀️"
+        },
+        {
+            "id": 21,
+            "img": "/img-cica.png",
+            "nombre": "Cica",
+            "precio": 7000,
+            "ambiente": "Interior 🏡"
+        },
+        {
+            "id": 27,
+            "img": "/img-equisetum.png",
+            "nombre": "Petunias",
+            "precio": 8000,
+            "ambiente": "Exterior ☀️"
+        },
+        {
+            "id": 31,
+            "img": "/img-aglaonema.png",
+            "nombre": "Aglaonema",
+            "precio": 10000,
+            "ambiente": "Interior 🏡"
+        }
+    ]
+}

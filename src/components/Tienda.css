@@ -1,0 +1,55 @@
+.tienda {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;/*El elemento no se agranda aunque tenga padding o border — todo cabe adentro del ancho que le dijiste.*/
+    overflow-x: hidden; /*esconde todo lo que se salga del contenedor hacia los costados. Es como cortar lo que sobra horizontalmente.*/
+    width: 100%;
+    background-image: url('/fondo-tienda9.jpg');
+    background-attachment: fixed;/*la imagen de fondo queda fija en la pantalla mientras scrolleás. El contenido se mueve pero el fondo no.*/
+    background-size: cover; /*estira la imagen para que cubra toda la pantalla sin dejar espacios en blanco*/
+    background-position: center;/*centra la imagen en la pantalla*/
+    background-repeat: no-repeat; /* evita que la imagen se repita en mosaico si es más chica que la pantalla*/
+    background-attachment: fixed; /* la imagen queda fija mientras scrolleás, el contenido pasa por encima pero el fondo no se mueve*/
+}
+
+.tienda ul {
+    display: grid;
+    /*grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));*/
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    border-radius: 20px;
+    list-style: none;
+    width: 100%;
+    padding: 1rem;
+}
+
+.img-cards {
+    width: 250px;
+    height: 250px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.tienda li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 300px;
+    margin: 0 auto;
+    border: 3px solid black;
+    background-color: rgba(240, 236, 0, 0.151);
+    border-radius: 10px;
+    padding: 10px;
+}
+.boton-agregar{
+    background: #4A7C59;
+    color: white;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.4s;
+}

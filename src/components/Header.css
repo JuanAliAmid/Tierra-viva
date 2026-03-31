@@ -1,0 +1,41 @@
+.list-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: burlywood;
+    height: 80px;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.list-header ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: 25px;
+    padding: 0;
+}
+
+
+.list-header h1,
+.list-header ul,
+.list-header .carrito {
+    flex: 1;
+}
+
+.list-header .carrito {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.bton-carrito {
+    background-color: rgb(28, 114, 50);
+    border-radius: 10px;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border: 2px solid rgb(45, 141, 33)
+}
