@@ -3,16 +3,17 @@ import { createContext, useState } from 'react'
 export const CarritoContext = createContext()
 
 export const CarritoProvider = ({ children }) => {
+
     const [carrito, setCarrito] = useState([])
     const [abierto, setAbierto] = useState(false)
     const [cantidades, setCantidades] = useState({})
     const contador = Object.values(cantidades).reduce((a, b) => a + b, 0)//const contador Suma todos los valores de cantidades para saber cuántos productos hay en total. Si tenés 2 plantas y 3 macetas, el contador muestra 5.
 
-    const manejarCarrito = () => { 
-    setAbierto(!abierto)//manejarCarrito Abre y cierra el carrito. Cada vez que la llamás cambia abierto al valor contrario.
+    const manejarCarrito = () => {
+        setAbierto(!abierto)//manejarCarrito Abre y cierra el carrito. Cada vez que la llamás cambia abierto al valor contrario.
     }
 
-    const agregar = (e) => {
+    const agregar = (e) => { //AGREGAR
         /*agregar
         Recibe un producto e y hace dos cosas según si ya existe en el carrito o no:
 
@@ -33,15 +34,43 @@ export const CarritoProvider = ({ children }) => {
             setCarrito([...carrito, e])
             setCantidades(estadoActual => ({ ...estadoActual, [e.id]: 1 }))
         }
+        setAbierto(true)
+        setTimeout(() => {
+            setAbierto(false)
+        }, 3000)
     }
 
 
-    console.log(carrito)
+    function eliminarProductos(id) { //ELIMINAR
+        setCarrito(carrito.filter(e => e.id !== id))
+        setCantidades(prev => { // prev es el estado actual de cantidades, ej: { 1: 3, 2: 5 }
+            const nuevas = { ...prev } // copia el objeto, para no mutar el estado directamente
+            delete nuevas[id]// borra la propiedad con ese id del objeto copiado
+            return nuevas// devuelve el objeto nuevo sin ese id, React actualiza el estado
+        })
+    }
+
+    function sumarProductos(i) { //SUMAR
+        if (cantidades[i] === 5) return;
+        setCantidades({ ...cantidades, [i]: (cantidades[i] || 0) + 1 })
+    }
+
+    function restarProductos(i) {//RESTAR
+        if ((cantidades[i] || 1) <= 1) return;
+        setCantidades({ ...cantidades, [i]: (cantidades[i] || 0) - 1 })
+    }
+
+    function total() {//TOTAL
+        return carrito.reduce((acumulador, producto) => { return acumulador + producto.precio * (cantidades[producto.id] || 1) }, 0)
+    }
+
+
     return (
-        < CarritoContext.Provider value={{ carrito, contador, abierto, agregar, manejarCarrito, setCarrito, cantidades, setCantidades }}>
+        < CarritoContext.Provider value={{ carrito, contador, abierto, agregar, manejarCarrito, cantidades, eliminarProductos, restarProductos, sumarProductos, total }}>
             {children}
         </CarritoContext.Provider>
     )
+    
 }
 
 

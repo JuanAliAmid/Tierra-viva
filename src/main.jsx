@@ -2,15 +2,19 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
-import { CarritoProvider} from './context/CartContext.jsx'
+import { CarritoProvider } from './context/CartContext.jsx'
 
 createRoot(document.getElementById('root')).render(
-  <CarritoProvider>
-    <BrowserRouter>
-      <StrictMode>
+  <StrictMode>
+    <CarritoProvider>
+      <BrowserRouter
+        future={{
+          v7_startTransition: true,
+          v7_relativeSplatPath: true
+        }}
+      >
         <App />
-      </StrictMode>
-    </BrowserRouter>
-  </CarritoProvider>,
-
+      </BrowserRouter>
+    </CarritoProvider>
+  </StrictMode>
 )

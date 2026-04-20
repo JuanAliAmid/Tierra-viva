@@ -1,13 +1,19 @@
+
 .list-header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: burlywood;
+    /*background: linear-gradient(to bottom, rgb(114, 105, 28) 0%, rgba(12, 12, 12, 0) 100%);*/
+    background: linear-gradient(to bottom, var(--color-dinamico, rgb(114, 105, 28)) 0%, rgba(12, 12, 12, 0) 100%);
+    /* negro semi-transparente */
     height: 80px;
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
+    position: relative;
+    z-index: 10;
+    color: white;
 }
 
 .list-header ul {
@@ -19,6 +25,23 @@
     padding: 0;
 }
 
+a.active {
+    color: green;
+    font-weight: bold;
+    transform: scale(1.08);
+
+}
+
+a {
+    display: inline-block;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+a:hover {
+    transform: scale(1.08);
+}
 
 .list-header h1,
 .list-header ul,
@@ -37,5 +60,7 @@
     color: white;
     width: 50px;
     height: 50px;
-    border: 2px solid rgb(45, 141, 33)
+    border: 2px solid rgb(45, 141, 33);
+    border: none;
+    cursor: pointer;
 }

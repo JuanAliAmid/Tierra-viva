@@ -1,21 +1,36 @@
 .ventana-carrito {
     display: flex;
     justify-content: flex-start;
-    background-color: burlywood;
+    background-color: rgba(10, 10, 30, 0.8);
     flex-direction: column;
+    align-items: center;
     position: fixed;
+    visibility: hidden;
     width: 350px;
     top: 0;
     right: 0;
     transform: translate(100%);
-    transition: 0.5s;
     height: 100%;
+    z-index: 20;
+    padding: 5px;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+.ventana-carrito.abierta {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
 }
 
 .boton-carrito {
     background-color: rgb(28, 114, 50);
-    border: 2px solid rgb(45, 141, 33);
     color: white;
+    border: none;
+    cursor: pointer;
+    border: 2px solid rgb(45, 141, 33);
     width: 50px;
     height: 50px;
     border-radius: 200%;
@@ -31,12 +46,12 @@
     overflow: hidden;
     width: 100%;
     padding: 5px;
-    margin: 0;
+    margin: 2px;
     background-color: rgb(255, 211, 154);
     border: 2px solid rgb(136, 120, 85);
     border-radius: 10px;
     gap: 5px;
-
+    color: black;
 }
 
 .ventana-carrito ul {
@@ -45,26 +60,28 @@
     justify-content: flex-start;
     flex-direction: column;
     box-sizing: border-box;
+    overflow-y: auto;
     gap: 5px;
     margin: 0;
     padding: 0 10px;
     width: 100%;
-    overflow-y: auto;
     flex: 1;
 }
 
-.ventana-carrito.abierta {
-    transform: translateX(0);
-}
+
 
 .boton-SM-ventana {
     width: 20px;
     height: 20px;
+    border: none;
+    cursor: pointer;
 }
 
 .bton-eliminar {
     background-color: brown;
     color: white;
+    cursor: pointer;
+    border: none;
     border-radius: 5px;
 }
 
@@ -80,9 +97,9 @@
 }
 
 .img-carrito {
+    object-fit: contain;
     width: 50px;
     height: 50px;
-    object-fit: contain;
     border-radius: 100%;
 }
 
@@ -106,5 +123,5 @@
 .info-prodc-carrito p {
     margin: 0;
     font-size: 15px;
-    color:black;
+    color: black;
 }
