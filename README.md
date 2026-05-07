@@ -8,7 +8,7 @@ Proyecto desarrollado como entrega final del curso de React JS en Coderhouse.
 
 ## Descripción:
 
-Tierra Viva es una Single Page Application (SPA) de e-commerce enfocada en la venta de plantas. La aplicación permite a los usuarios explorar un catálogo dinámico extraído de una base de datos en la nube, gestionar un carrito de compras de forma global y finalizar pedidos generando órdenes de compra en tiempo real. Se destaca por una interfaz "galactic-chic" con un diseño moderno, limpio y funcional.
+Tierra Viva es una Single Page Application (SPA) de e-commerce enfocada en la venta de plantas. La aplicación permite a los usuarios explorar un catálogo dinámico extraído de una base de datos en la nube, gestionar un carrito de compras de forma global y finalizar pedidos generando órdenes de compra en tiempo real. con un diseño limpio y funcional.
 
 ## Funcionalidades:
 
@@ -49,3 +49,5 @@ Tierra Viva es una Single Page Application (SPA) de e-commerce enfocada en la ve
 - HTML5 & CSS3 
 
 - React Icons / FontAwesome (Iconografía)
+
+- Variables de Entorno (.env): Implementación de variables para la protección de credenciales de Firebase en el deploy.
