@@ -19,9 +19,15 @@ export const ItemDetail = ({ item, navigate }) => {
 
             <h3 className="sub-titulo-detail">Iluminación</h3>
             <p className="p-datail">{item.detalles.luz}</p>
-            <button className="boton-detail" onClick={() => navigate('/Tienda')}>Volver a tienda</button>
+
           </div>
 
+          <div className="fila-abajo">
+
+            <button className="boton-detail-items" onClick={() => navigate('/Tienda')}>Volver a tienda</button>
+
+          </div>
+          
         </section>
         : <h1>Buscando planta en el sistema...</h1>
       }

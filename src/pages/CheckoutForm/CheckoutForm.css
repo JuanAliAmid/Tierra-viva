@@ -74,6 +74,11 @@ input {
     font-weight: 600;
     color: #fde5d0;
     background-color: rgb(27, 27, 78);
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    padding: 0.8rem 2rem;
+    transition: 0.3s;
 }
 .boton-detail:hover{
     color: #fde5d0;

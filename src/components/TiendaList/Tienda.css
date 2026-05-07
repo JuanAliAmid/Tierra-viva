@@ -37,6 +37,7 @@
     border-radius: 5px;
     border: none;
     cursor: pointer;
+    font-size: 15px;
 }
 
 .boton-agregar:disabled {
@@ -94,11 +95,12 @@
 .boton-agregar {
     background: #4A7C59;
     color: white;
-    padding: 0.8rem 2rem;
+    padding: 10px 20px;
     border: none;
     cursor: pointer;
     border-radius: 4px;
     transition: 0.4s;
+    font-size: 15px;
 }
 
 .filtros {

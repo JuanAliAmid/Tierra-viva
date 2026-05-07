@@ -21,6 +21,9 @@
     width: 90%;
     place-items: center;
 }
+.fila-abajo {
+    grid-column: 1 / -1;
+}
 
 .p-datail {
     color: white;
@@ -30,20 +33,26 @@
 
 }
 
-.boton-detail {
-    background-color: #2D6A4F;
-    color: white;
+.boton-detail-items{
+    font-size: 15px;
+    font-weight: 600;
+    color: #fde5d0;
+    background-color: rgb(34, 41, 100);
     cursor: pointer;
     border: none;
     border-radius: 5px;
     padding: 0.8rem 2rem;
     transition: 0.3s;
-
+    margin-top: 10px;
+}
+.boton-detail-items:hover{
+    color: #fde5d0;
+    background-color: rgb(29, 29, 110);
 }
 
 .sub-titulo-detail {
     padding: 0;
-    margin: 0;
+    margin: -2px;
     text-shadow: 0 0 8px rgb(0, 0, 0);
     color: #f7c98e;;
 }
