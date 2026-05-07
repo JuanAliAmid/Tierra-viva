@@ -1,3 +1,3 @@
-import { getProducts, addProducts, removeProducts, updateProducts } from "./productos"
+import { getProducts } from "./productos"
 
-export const firestore = { getProducts, addProducts, removeProducts, updateProducts }
+export const firestore = { getProducts }

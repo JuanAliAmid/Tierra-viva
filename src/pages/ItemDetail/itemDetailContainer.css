@@ -16,13 +16,14 @@
     /* la imagen queda fija mientras scrolleás, el contenido pasa por encima pero el fondo no se mueve*/
     min-height: 100vh;
     margin-top: -80px;
+    
 }
 
 .Detail-Container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     /* Dos columnas iguales */
-    color: tomato;
+    color: #8db596;
     gap: 40px;
     /* Espacio entre imagen y texto */
     max-width: 1000px;
@@ -41,24 +42,41 @@
 
 }
 
-h3,
-h1 {
-    padding: 0;
-    margin: 0;
-    text-shadow: 0 0 8px rgb(0, 0, 0);
+.boton-detail {
+    background-color: #2D6A4F;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    padding: 0.8rem 2rem;
+    transition: 0.3s;
 
 }
 
+.sub-titulo-detail {
+    padding: 0;
+    margin: 0;
+    text-shadow: 0 0 8px rgb(0, 0, 0);
+    color: #f7c98e;;
+}
+
+.h1-detail {
+    color: #f7c98e;
+}
+
 img {
-    height: auto;    /* Mantiene la proporción para que no se estire */
+    height: auto;
+    /* Mantiene la proporción para que no se estire */
     object-fit: cover;
-    aspect-ratio: 1 / 1; /* Asegura que siga siendo un círculo perfecto */
-    border-radius: 50%;
-    max-width: 100%; /* No puede ser más ancha que su columna */
+    aspect-ratio: 1 / 1;
+    /* Asegura que siga siendo un círculo perfecto */
+    max-width: 100%;
+    /* No puede ser más ancha que su columna */
     width: 450px;
     border-radius: 50%;
     box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
     margin: 10px;
+    
 }
 
 .grid-container {
@@ -67,4 +85,5 @@ img {
     text-align: center;
     align-items: center;
     justify-content: center;
+    
 }

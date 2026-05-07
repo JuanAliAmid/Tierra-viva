@@ -2,17 +2,21 @@ import { useContext } from "react"
 import { CarritoContext } from "../../context/CartContext"
 import './DrawerCarrito.css'
 import { CardsCarrito } from "./CardsCarrito"
+import { FaArrowRight  } from 'react-icons/fa'
+import { NavLink, useNavigate } from "react-router-dom"
 
 
 export const DrawerCarrito = () => {
 
-   const { carrito, abierto, manejarCarrito, cantidades, eliminarProductos, sumarProductos, restarProductos, total } = useContext(CarritoContext)
+   const { carrito, abierto, manejarCarrito, cantidades, eliminarProductos, sumarProductos, restarProductos, total, vaciar } = useContext(CarritoContext)
+
+   const navigate = useNavigate()
 
    return (
       <>
          <div className={abierto ? 'ventana-carrito abierta' : 'ventana-carrito'}>
             <div className="flecha-total">
-               <button onClick={manejarCarrito} className="boton-carrito">➦</button>
+               <FaArrowRight  className="boton-carrito" onClick={manejarCarrito} />
                <span>Total: ${total()}</span>
             </div>
             {carrito.length === 0 ? <p>El carrito está vacio</p> : carrito.map((e) => (
@@ -25,7 +29,10 @@ export const DrawerCarrito = () => {
                   eliminarProductos={eliminarProductos}
                />
             ))}
-
+            <div className="bton-confirm-vaciar">
+             {carrito.length === 0 ? null: <button className="boton-vaciar-carrito" onClick={() => vaciar()}>Vaciar carrito</button>}
+             {carrito.length === 0 ? null: <button className="boton-realizar-compra" onClick={() => navigate('/checkout')}>Realizar compra</button>}
+            </div>
          </div>
       </>
    )

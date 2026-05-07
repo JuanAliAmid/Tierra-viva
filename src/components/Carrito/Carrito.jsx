@@ -1,6 +1,7 @@
 
 import { CarritoContext } from "../../context/CartContext"
 import { useContext } from "react"
+import { ShoppingCart } from 'lucide-react'
 
 export const Carrito = () => {
 
@@ -9,7 +10,8 @@ export const Carrito = () => {
   return (
     <div className="carrito">
       <button className='bton-carrito' onClick={() => manejarCarrito()}>
-        🛒 <span>{contador}</span>
+        <ShoppingCart className="icono-carrito"/>
+         <span className="contador-carrito">{contador}</span>
       </button>
     </div>
   )

@@ -6,21 +6,23 @@ import { Routes, Route } from 'react-router-dom'
 import { DrawerCarrito } from './components/Carrito/DrawerCarrito.jsx'
 import { NotFound } from './components/NotFound.jsx'
 import { ItemDetailContainer } from './pages/ItemDetail/ItemDetailContainer.jsx'
+import { CheckoutForm } from './pages/CheckoutForm/CheckoutForm.jsx'
 import { useState } from 'react'
+
+
 
 function App() {
 
-  const [headerColor, setHeaderColor] = useState('#1a1a1a')
-
   return (
     <>
-      <Header colorFondo={headerColor}/>
+      <Header />
       <DrawerCarrito />
       <Routes>
-        <Route path='/' element={<Home setHeaderColor={setHeaderColor}/>} />
-        <Route path='/Tienda' element={<TiendaContainer setHeaderColor={setHeaderColor}/>} />
-        <Route path='/Categoria/:categoryId' element={<TiendaContainer setHeaderColor={setHeaderColor}/>} />
-        <Route path="/product/:productId" element={<ItemDetailContainer setHeaderColor={setHeaderColor}/>} />
+        <Route path='/' element={<Home />} />
+        <Route path='/Tienda' element={<TiendaContainer />} />
+        <Route path='/Categoria/:categoryId' element={<TiendaContainer />} />
+        <Route path="/product/:productId" element={<ItemDetailContainer />} />
+        <Route path="/checkout" element={<CheckoutForm />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
     </>

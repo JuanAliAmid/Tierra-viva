@@ -1,16 +1,51 @@
-# React + Vite
+# Tierra Viva 🌿
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Proyecto desarrollado como entrega final del curso de React JS en Coderhouse.
 
-Currently, two official plugins are available:
+## Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[Ver proyecto]()
 
-## React Compiler
+## Descripción:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Tierra Viva es una Single Page Application (SPA) de e-commerce enfocada en la venta de plantas. La aplicación permite a los usuarios explorar un catálogo dinámico extraído de una base de datos en la nube, gestionar un carrito de compras de forma global y finalizar pedidos generando órdenes de compra en tiempo real. Se destaca por una interfaz "galactic-chic" con un diseño moderno, limpio y funcional.
 
-## Expanding the ESLint configuration
+## Funcionalidades:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Catálogo Dinámico: Visualización de productos obtenida desde Firebase Firestore.
+
+- Navegación SPA: Implementación de rutas dinámicas con react-router-dom para navegar sin recargar el navegador.
+
+- Filtrado por Categorías: Clasificación de plantas (Interior / Exterior) mediante rutas dinámicas.
+
+- Detalle de Producto: Vista profunda de cada especie (riego, iluminación y descripción) utilizando parámetros de URL.
+
+- Carrito de Compras Global: - Agregar, sumar, restar y eliminar productos unitariamente.
+
+- Persistencia de datos y cálculo de totales automáticos.
+
+- Gestión de Stock: Renderizado condicional que deshabilita el botón de compra cuando no hay disponibilidad.
+
+- Checkout y Órdenes: Formulario de validación para generar una orden de compra en Firestore, devolviendo un ID de seguimiento al usuario.
+
+- Experiencia de Usuario (UX):
+
+- Loaders durante la carga de datos.
+
+- Notificaciones visuales de confirmación.
+
+- Carrito tipo Drawer (menú lateral) para no interrumpir la navegación.
+
+## Tecnologías utilizadas:
+
+- React.js (Vite)
+
+- React Router DOM (Navegación)
+
+- Context API (Estado Global)
+
+- Firebase / Firestore (BaaS)
+
+- HTML5 & CSS3 
+
+- React Icons / FontAwesome (Iconografía)

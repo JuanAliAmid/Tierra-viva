@@ -6,8 +6,9 @@ import { Link } from 'react-router-dom'
 
 export const CardsTienda = ({ id, img, nombre, precio, ambiente }) => {
 
-  const { agregar } = useContext(CarritoContext)
+  const { agregar, cantidades } = useContext(CarritoContext)
 
+  console.log(cantidades)
   return (
     <div >
       <li>
@@ -16,9 +17,8 @@ export const CardsTienda = ({ id, img, nombre, precio, ambiente }) => {
         <Link to={`/product/${id}`} className="btn-detalle">
           Ver más detalles
         </Link>
-        <p>Ambientación🌿: {ambiente}</p>
         <p>Monto: ${precio}</p>
-        <button className="boton-agregar" onClick={() => agregar({ id, img, nombre, precio })}>Agregar al Carrito</button>
+        <button className="boton-agregar" disabled={cantidades[id] >= 10} onClick={() => agregar({ id, img, nombre, precio })}> {cantidades[id] >= 10 ? "Stock agotado" : "Agregar al Carrito"}</button>
       </li>
     </div>
   )

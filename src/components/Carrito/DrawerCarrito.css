@@ -25,15 +25,66 @@
     visibility: visible;
 }
 
+.bton-confirm-vaciar {
+    display: flex;
+    flex-direction: row;
+}
+
 .boton-carrito {
-    background-color: rgb(28, 114, 50);
     color: white;
     border: none;
     cursor: pointer;
-    border: 2px solid rgb(45, 141, 33);
-    width: 50px;
-    height: 50px;
-    border-radius: 200%;
+    width: 30px;
+    height: 30px;
+    transition: 0.5s;
+}
+
+.boton-carrito:hover {
+    transform: scale(1.1);
+    color: rgb(97, 202, 97);
+}
+
+.boton-vaciar-carrito {
+    background: #ff04009d;
+    color: white;
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.4s;
+    margin: 5px;
+    font-weight: 600;
+}
+
+.boton-realizar-compra {
+    background: #FFDAB9;
+    color: #185028;
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.4s;
+    margin: 5px;
+    font-weight: 600;
+}
+
+.boton-realizar-compra:hover{
+    background-color: #f3bf92;
+} 
+.img-papelera {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    padding: 3px;
+    transition: 0.6s;
+    color: rgb(63, 62, 62);
+}
+
+.img-papelera:hover {
+    transform: scale(1.03);
+    color: rgb(39, 6, 6);
 }
 
 .ventana-carrito li {
@@ -47,8 +98,8 @@
     width: 100%;
     padding: 5px;
     margin: 2px;
-    background-color: rgb(255, 211, 154);
-    border: 2px solid rgb(136, 120, 85);
+    background-color: #59966b;
+    border: none;
     border-radius: 10px;
     gap: 5px;
     color: black;
@@ -69,21 +120,14 @@
 }
 
 
-
 .boton-SM-ventana {
     width: 20px;
     height: 20px;
     border: none;
     cursor: pointer;
+    border-radius: 50%;
 }
 
-.bton-eliminar {
-    background-color: brown;
-    color: white;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-}
 
 .flecha-total {
     display: flex;

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Playwrite+DE+SAS:wght@100..400&family=Quicksand:wght@300..700&display=swap');
 
 .list-header {
     display: flex;
@@ -5,7 +6,8 @@
     justify-content: space-between;
     align-items: center;
     /*background: linear-gradient(to bottom, rgb(114, 105, 28) 0%, rgba(12, 12, 12, 0) 100%);*/
-    background: linear-gradient(to bottom, var(--color-dinamico, rgb(114, 105, 28)) 0%, rgba(12, 12, 12, 0) 100%);
+    /*background: linear-gradient(to bottom, var(--color-dinamico, rgb(114, 105, 28)) 0%, rgba(12, 12, 12, 0) 100%);*/
+    background: linear-gradient(to right, rgba(10, 10, 30, 0.849), rgba(10, 10, 30, 0));
     /* negro semi-transparente */
     height: 80px;
     width: 100%;
@@ -25,8 +27,13 @@
     padding: 0;
 }
 
+.h1-header {
+    font-family: "Playwrite DE SAS", cursive;
+    color: #d3c6bd;
+}
+
 a.active {
-    color: green;
+    color: #4e8d61;
     font-weight: bold;
     transform: scale(1.08);
 
@@ -34,9 +41,11 @@ a.active {
 
 a {
     display: inline-block;
-    color: white;
+    color: #d3c6bd;
     cursor: pointer;
     transition: 0.3s;
+    font-size: 15px;
+    font-weight: 600;
 }
 
 a:hover {
@@ -54,13 +63,41 @@ a:hover {
     justify-content: flex-end;
 }
 
+.list-header li {
+    font-family: "PT Serif", serif;
+    font-weight: 500;
+    font-style: italic;
+}
+
 .bton-carrito {
-    background-color: rgb(28, 114, 50);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    background-color: #4a7c59;
     border-radius: 10px;
     color: white;
     width: 50px;
     height: 50px;
-    border: 2px solid rgb(45, 141, 33);
     border: none;
     cursor: pointer;
+    gap: 4px;
+}
+
+.contador-carrito {
+    font-size: 14px;
+    font-weight: bold;
+    /* Esto ayuda a que el número se alinee bien con la base del icono */
+
+}
+
+.icono-carrito {
+    width: 20px;
+    height: 20px;
+}
+
+.icono {
+    width: 60px;
+    height: 60px;
+    border-radius: 18%;
 }

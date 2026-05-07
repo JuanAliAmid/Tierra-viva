@@ -1,31 +1,26 @@
 import { useState, useEffect } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { services } from "../../services"
-import { getProducts } from "../../services/mocks/productos"
 import { ItemDetail } from "../../components/ItemDetail/ItemDetail"
 import './ItemDetailContainer.css'
+import { doc, getDoc } from "firebase/firestore"
+import { db } from "../../components/firebase/config"
 
-export const ItemDetailContainer = ({ setHeaderColor }) => {
+export const ItemDetailContainer = () => {
     const [item, setItem] = useState(null)
     const navigate = useNavigate()
     const { productId } = useParams()
 
     useEffect(() => {
-        // Al entrar a esta página, cambiamos el color (ej: Tomato con transparencia)
-        setHeaderColor('tomato');
+        const docRef = doc(db, "productos", productId)
 
-        // IMPORTANTE: Al salir de la página, volvemos al color original
-        return () => setHeaderColor('#1a1a1a');
-    }, [setHeaderColor]);
-
-    useEffect(() => {
-
-        services.mocks.getProducts().then(data => {
-            const plantaEncontrada = data.productos.find((e) => e.id == productId)
-            setItem(plantaEncontrada)
-        }).catch(error => {
-            console.error(error)
-        })
+        getDoc(docRef)
+            .then((res) => {
+                const data = { id: res.id, ...res.data() }
+                console.log(data)
+                setItem(data)
+            })
+            .catch(error => console.log(error))
 
     }, [productId])
 

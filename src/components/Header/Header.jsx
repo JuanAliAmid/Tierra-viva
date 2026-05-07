@@ -4,18 +4,18 @@ import './Header.css'
 import { Carrito } from '../Carrito/Carrito'
 import { NavLink } from 'react-router-dom'
 
-export const Header = ({ colorFondo }) => {
+export const Header = () => {
     const location = useLocation()
 
-    const enLaTienda = location.pathname === '/Tienda' || location.pathname.includes('/Categoria')
+    const ocultarTienda = location.pathname.includes('/product') || location.pathname.includes('/checkout')
+    const ocultarHome = location.pathname.includes('/checkout')
 
     return (
-        <header className="list-header" style={{ '--color-dinamico': colorFondo }}>
-            <h1>E-Commerce</h1>
-            <ul >
-                <li><NavLink to="/">Home</NavLink></li>
-                <li><NavLink to="/Tienda" className={enLaTienda ? 'active' : ''}>Tienda</NavLink></li>
-                <li> Sobre Nosotros</li>
+        <header className="list-header">
+            <h1 className='h1-header'>Tierra Viva</h1>
+            <ul>
+                {!ocultarHome &&  <li><NavLink to="/">Home</NavLink></li>}
+                {!ocultarTienda &&  <li><NavLink to="/Tienda">Tienda</NavLink></li>}
             </ul>
             <Carrito />
         </header>

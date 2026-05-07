@@ -1,5 +1,5 @@
 
-export const ItemDetail = ({item, navigate}) => {
+export const ItemDetail = ({ item, navigate }) => {
   return (
     <div className="Detail-Container-img">
 
@@ -7,19 +7,19 @@ export const ItemDetail = ({item, navigate}) => {
         < section className="Detail-Container">
 
           <div className="grid-container">
-            <h1>{item.nombre}</h1>
+            <h1 className="h1-detail">{item.nombre}</h1>
             <img src={item.img} alt={item.nombre} />
           </div>
           <div className="grid-container">
-            <h3>Descripción</h3>
+            <h3 className="sub-titulo-detail">Descripción</h3>
             <p className="p-datail">{item.detalles.descripcion}</p>
 
-            <h3 style={{ color: "tomato" }}>Riego</h3>
+            <h3 className="sub-titulo-detail">Riego</h3>
             <p className="p-datail">{item.detalles.riego}</p>
 
-            <h3 style={{ color: "tomato" }}>Iluminación</h3>
+            <h3 className="sub-titulo-detail">Iluminación</h3>
             <p className="p-datail">{item.detalles.luz}</p>
-            <button className="boton-home" onClick={() => navigate('/Tienda')}>Volver a tienda</button>
+            <button className="boton-detail" onClick={() => navigate('/Tienda')}>Volver a tienda</button>
           </div>
 
         </section>
