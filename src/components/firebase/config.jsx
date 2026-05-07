@@ -4,12 +4,12 @@ import { initializeApp } from 'firebase/app'
 import { getFirestore } from 'firebase/firestore'
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAcecfowOpkfztfceyY0FaP0OBFZBik6dw",
-  authDomain: "tierra-viva-firebase.firebaseapp.com",
-  projectId: "tierra-viva-firebase",
-  storageBucket: "tierra-viva-firebase.firebasestorage.app",
-  messagingSenderId: "415722638731",
-  appId: "1:415722638731:web:821c4119cb1950776e738e"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID
 }
 
 const app = initializeApp(firebaseConfig)

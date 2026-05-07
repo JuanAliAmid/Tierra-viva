@@ -1,4 +1,4 @@
-# Tierra Viva 🌿
+# Tierra Viva 
 
 Proyecto desarrollado como entrega final del curso de React JS en Coderhouse.
 
