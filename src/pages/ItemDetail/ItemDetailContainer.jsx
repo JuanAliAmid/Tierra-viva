@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react"
 import { useNavigate, useParams } from "react-router-dom"
-import { services } from "../../services"
 import { ItemDetail } from "../../components/ItemDetail/ItemDetail"
 import './ItemDetailContainerr.css'
 import { doc, getDoc } from "firebase/firestore"

@@ -15,10 +15,10 @@ export const TiendaList = ({ categoryId, handleCategoriaChange, nombreFiltrado, 
 
                     </select>
 
-                    {/* Input de búsqueda */}
+                    {/* Input de búsqueda por nombre*/}
                     <input className="input-tienda" type="text" value={nombreFiltrado} onChange={(e) => setNombreFiltrado(e.target.value)} placeholder="Buscar por nombre" />
 
-                    {/* Select de precio */}
+                    {/* Select de precios */}
                     <select name="" id="" value={montoElegido} onChange={(e) => e.target.value === 'Aleatorio' ? setMontoElegido(null) : setMontoElegido(e.target.value)} className="select-filter">
                         <option value="" disabled hidden>Filtrado por precio</option>
                         <option value="Aleatorio">Aleatorio</option>

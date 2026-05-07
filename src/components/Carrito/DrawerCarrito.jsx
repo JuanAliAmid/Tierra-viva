@@ -19,7 +19,7 @@ export const DrawerCarrito = () => {
                <FaArrowRight  className="boton-carrito" onClick={manejarCarrito} />
                <span>Total: ${total()}</span>
             </div>
-            {carrito.length === 0 ? <p>El carrito está vacio</p> : carrito.map((e) => (
+            {carrito.length === 0 ? <p>El carrito está vacío</p> : carrito.map((e) => (
                <CardsCarrito
                   key={e.id}
                   {...e}

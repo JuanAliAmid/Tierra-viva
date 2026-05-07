@@ -10,7 +10,6 @@ import { CheckoutForm } from './pages/CheckoutForm/CheckoutForm.jsx'
 import { useState } from 'react'
 
 
-
 function App() {
 
   return (
@@ -27,6 +26,7 @@ function App() {
       </Routes>
     </>
   )
+  
 }
 
 export default App

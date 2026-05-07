@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react"
 import { CardsTienda } from "../../components/ItemDetail/CardsTienda"
-import { services } from "../../services"
 import { useNavigate, useParams } from "react-router-dom"
 import { TiendaList } from "../../components/TiendaList/TiendaList"
 import { collection, getDocs, query } from "firebase/firestore"
@@ -19,7 +18,6 @@ export const TiendaContainer = () => {
     const navigate = useNavigate()
     const { categoryId } = useParams()
 
-
     const handleCategoriaChange = (event) => {
 
         const categoria = event.target.value;
@@ -30,7 +28,6 @@ export const TiendaContainer = () => {
         }
 
     }
-
 
     useEffect(() => {
 
@@ -43,26 +40,6 @@ export const TiendaContainer = () => {
 
     }, [categoryId])
 
-    /*useEffect(() => {
-
-        services.mocks.getProducts().then(data => {
-            setProductos(data.productos)
-        }).catch(error => {
-            console.error(error)
-        }).finally(() => setLoading(false))
-
-    }, [])*/
-
-
-    /* const filtrados = productos.filter(a => {
-         // Si no hay categoría en la URL, mostramos todo
-         if (!categoryId) return true;
- 
-         // Si hay categoría, comparamos (asegurándonos de que coincidan las mayúsculas/minúsculas)
-         return a.ambiente.toLowerCase().includes(categoryId.toLowerCase());
-     }).filter(e =>
-         e.nombre.toLowerCase().includes(nombreFiltrado.toLowerCase())
-     );*/
     const filtrados = productos.filter(e =>
         e.nombre.toLowerCase().includes(nombreFiltrado.toLowerCase())
     )

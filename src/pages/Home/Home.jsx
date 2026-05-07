@@ -7,7 +7,7 @@ export const Home = () => {
     const navigate = useNavigate()
     return (
         <div className='home'>
-            <section className="img-inicio" style={{ backgroundImage: `url(/img-home21.png)` }}>
+            <section className="img-inicio" >
                 <div className='home-content'>
                     <h1>Naturaleza que transforma espacios</h1>
                     <h2 className='h3-home'>Sumate al mundo verde</h2>

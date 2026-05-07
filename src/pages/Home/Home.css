@@ -8,6 +8,17 @@ body {
 .home {
     position: relative;
     margin-top: -80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('/img-home21.png');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    margin-top: -80px;
+    gap: 25px;
 }
 
 
@@ -16,7 +27,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* alinea al inicio */
     margin-left: 180px;
     padding: 20px;
 }

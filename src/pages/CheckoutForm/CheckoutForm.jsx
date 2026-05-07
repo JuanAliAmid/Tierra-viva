@@ -33,16 +33,16 @@ export const CheckoutForm = () => {
 
         if (!isNaN(usuario.nombre) || !isNaN(usuario.email) || !isNaN(usuario.apellido)) {
             setMostrarError(true)
-            setError('Digitos invalido al completar los campos ⚠️')
-            setTimeout(() => { setMostrarError(false) }, 2000) //controla la opacidad
-            setTimeout(() => { setError("") }, 4000) //controla la duracion del texto en pantalla
+            setError('Dígitos invalido al completar los campos ⚠️')
+            setTimeout(() => { setMostrarError(false) }, 2000) 
+            setTimeout(() => { setError("") }, 4000) 
             return
         }
         if (!usuario.email.includes('@')) {
             setMostrarError(true)
             setError('El gmail debe contener el caracter "@" ⚠️')
-            setTimeout(() => { setMostrarError(false) }, 2000) //controla la opacidad
-            setTimeout(() => { setError("") }, 4000) //controla la duracion del texto en pantalla
+            setTimeout(() => { setMostrarError(false) }, 2000) 
+            setTimeout(() => { setError("") }, 4000) 
             return
         }
 

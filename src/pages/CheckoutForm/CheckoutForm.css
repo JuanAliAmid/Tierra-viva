@@ -5,15 +5,9 @@
     flex-direction: column;
     background-image: url('/img-form20.png');
     background-attachment: fixed;
-    /*la imagen de fondo queda fija en la pantalla mientras scrolleás. El contenido se mueve pero el fondo no.*/
     background-size: cover;
-    /*estira la imagen para que cubra toda la pantalla sin dejar espacios en blanco*/
     background-position: center;
-    /*centra la imagen en la pantalla*/
     background-repeat: no-repeat;
-    /* evita que la imagen se repita en mosaico si es más chica que la pantalla*/
-    background-attachment: fixed;
-    /* la imagen queda fija mientras scrolleás, el contenido pasa por encima pero el fondo no se mueve*/
     min-height: 100vh;
     margin-top: -80px;
     gap: 25px;
@@ -73,9 +67,15 @@ input {
     align-items: center;
     flex-direction: row;
     gap: 10px;
+    margin: 5px;
 }
 .boton-detail{
     font-size: 15px;
     font-weight: 600;
     color: #fde5d0;
+    background-color: rgb(27, 27, 78);
+}
+.boton-detail:hover{
+    color: #fde5d0;
+    background-color: rgb(36, 36, 102);
 }
