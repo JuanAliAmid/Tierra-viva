@@ -1,12 +1,28 @@
-import { createContext, useMemo, useState } from 'react'
+import { createContext, useEffect, useMemo, useState } from 'react'
 
 export const CarritoContext = createContext()
 
 export const CarritoProvider = ({ children }) => {
 
-    const [carrito, setCarrito] = useState([])
+    const [carrito, setCarrito] = useState(() => {
+        const productosGuardados = localStorage.getItem('carrito')
+        return productosGuardados ? JSON.parse(productosGuardados) : []
+    })
+
+    useEffect(() => {
+        localStorage.setItem('carrito', JSON.stringify(carrito))
+    }, [carrito])
+
+    const [cantidades, setCantidades] = useState(() => {
+        const cantidadesGuardadas = localStorage.getItem('cantidades')
+        return cantidadesGuardadas ? JSON.parse(cantidadesGuardadas) : {}
+    })
+
+    useEffect(() => {
+        localStorage.setItem('cantidades', JSON.stringify(cantidades))
+    }, [cantidades])
+    
     const [abierto, setAbierto] = useState(false)
-    const [cantidades, setCantidades] = useState({})
     const contador = Object.values(cantidades).reduce((a, b) => a + b, 0)//const contador Suma todos los valores de cantidades para saber cuántos productos hay en total.
 
     const manejarCarrito = () => {

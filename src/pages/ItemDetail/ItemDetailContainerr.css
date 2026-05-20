@@ -3,7 +3,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    background-image: url('/img-ItemDetail.jpg');
+    background-image: url('/img-ItemDetail6.png');
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -20,6 +20,7 @@
     max-width: 1000px;
     width: 90%;
     place-items: center;
+    margin-top: 70px;
 }
 .fila-abajo {
     grid-column: 1 / -1;
@@ -36,8 +37,8 @@
 .boton-detail-items{
     font-size: 15px;
     font-weight: 600;
-    color: #fde5d0;
-    background-color: rgb(34, 41, 100);
+    color: #f5e4d1;
+    background-color: #4a7c59;
     cursor: pointer;
     border: none;
     border-radius: 5px;
@@ -47,7 +48,7 @@
 }
 .boton-detail-items:hover{
     color: #fde5d0;
-    background-color: rgb(29, 29, 110);
+    background-color: #43a05f;
 }
 
 .sub-titulo-detail {

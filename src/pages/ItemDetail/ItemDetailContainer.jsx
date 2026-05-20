@@ -4,6 +4,8 @@ import { ItemDetail } from "../../components/ItemDetail/ItemDetail"
 import './ItemDetailContainerr.css'
 import { doc, getDoc } from "firebase/firestore"
 import { db } from "../../components/firebase/config"
+import { ImSpinner2 } from "react-icons/im"
+
 
 export const ItemDetailContainer = () => {
     const [item, setItem] = useState(null)
@@ -27,7 +29,7 @@ export const ItemDetailContainer = () => {
     return (
         <div className="Detail-Container-img">
 
-            {item ? <ItemDetail item={item} navigate={navigate} /> : <h1>Buscando planta en el sistema...</h1>}
+            {item ? <ItemDetail item={item} navigate={navigate} /> : <h1>Buscando planta en el sistema <ImSpinner2 className="loading"/></h1>}
 
         </div>
     )

@@ -18,7 +18,7 @@ export const CardsTienda = ({ id, img, nombre, precio, ambiente }) => {
           Ver más detalles
         </Link>
         <p>Monto: ${precio}</p>
-        <button className="boton-agregar" disabled={cantidades[id] >= 10} onClick={() => agregar({ id, img, nombre, precio })}> {cantidades[id] >= 10 ? "Stock agotado" : "Agregar al Carrito"}</button>
+        <button className={cantidades[id] >= 10 ? "boton-agotado" : "boton-agregar"} disabled={cantidades[id] >= 10} onClick={() => agregar({ id, img, nombre, precio })}> {cantidades[id] >= 10 ? "Stock agotado" : "Agregar al Carrito"}</button>
       </li>
     </div>
   )

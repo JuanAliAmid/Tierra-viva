@@ -19,7 +19,9 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/Tienda' element={<TiendaContainer />} />
+        <Route path='/Tienda/:orden' element={<TiendaContainer />} />
         <Route path='/Categoria/:categoryId' element={<TiendaContainer />} />
+        <Route path='/Categoria/:categoryId/:orden' element={<TiendaContainer />} />
         <Route path="/product/:productId" element={<ItemDetailContainer />} />
         <Route path="/checkout" element={<CheckoutForm />} />
         <Route path='*' element={<NotFound />} />

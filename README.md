@@ -48,6 +48,10 @@ Tierra Viva es una Single Page Application (SPA) de e-commerce enfocada en la ve
 
 - HTML5 & CSS3 
 
+- localStorage
+
+- Toastify
+
 - React Icons / FontAwesome (Iconografía)
 
 - Variables de Entorno (.env): Implementación de variables para la protección de credenciales de Firebase en el deploy.

@@ -21,6 +21,13 @@
     gap: 10px;
 }
 
+.h1-h2-checkout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 input {
     width: 300px;
     height: 40px;
@@ -28,7 +35,27 @@ input {
     border: 1.5px solid #185028;
 }
 
+@keyframes efect-disco {
+    0% {
+        transform: rotateZ(0deg);
+    }
+
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+.loading {
+    animation-name: efect-disco;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+}
+
 .error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: rgb(255, 255, 255);
     background-color: rgba(128, 2, 2, 0.699);
     padding: 5px;
@@ -38,6 +65,9 @@ input {
 }
 
 .campos-vacios {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: rgb(255, 255, 255);
     background-color: rgba(128, 2, 2, 0.699);
     padding: 5px;
@@ -46,11 +76,11 @@ input {
     transition: opacity 1s;
 }
 
-.h1-form{
+.h1-form {
     margin-bottom: 50px;
 }
 
-.boton-form{
+.boton-form {
     background: #FFDAB9;
     color: #185028;
     padding: 0.6rem 2rem;
@@ -60,19 +90,22 @@ input {
     transition: 0.4s;
     font-size: 17px;
     font-weight: 600;
+    margin-top: 15px;
 }
-.btns-navegacion{
+
+.btns-navegacion {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    gap: 10px;
-    margin: 5px;
+    gap: 20px;
+    margin-top: 25px;
 }
-.boton-detail{
+
+.boton-detail {
     font-size: 15px;
     font-weight: 600;
-    color: #fde5d0;
+    color: #fcebdc;
     background-color: rgb(27, 27, 78);
     cursor: pointer;
     border: none;
@@ -80,7 +113,14 @@ input {
     padding: 0.8rem 2rem;
     transition: 0.3s;
 }
-.boton-detail:hover{
+
+.boton-detail:hover {
     color: #fde5d0;
     background-color: rgb(36, 36, 102);
+}
+.Alert-Triangle{
+    color: rgb(0, 0, 0);
+    width: 35px;
+    height: 35px;
+    fill: rgb(255, 196, 0);
 }

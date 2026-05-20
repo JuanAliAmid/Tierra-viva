@@ -13,18 +13,28 @@ export const TiendaContainer = () => {
     const [productos, setProductos] = useState([])
     const [nombreFiltrado, setNombreFiltrado] = useState("")
     const [loading, setLoading] = useState(false)
-    const [montoElegido, setMontoElegido] = useState('')
 
     const navigate = useNavigate()
-    const { categoryId } = useParams()
+    const { categoryId, orden } = useParams()
 
-    const handleCategoriaChange = (event) => {
+    const handleCategoriaChange = (event) => { //maneja el enrutado cuando seleccionas algo en el filtro de ambiente 
 
         const categoria = event.target.value;
         if (categoria === 'todas') {
-            navigate('/Tienda');
+            navigate(orden ? `/Tienda/${orden}` : '/Tienda');
         } else {
-            navigate(`/Categoria/${categoria}`)
+            navigate(orden ? `/Categoria/${categoria}/${orden}` : `/Categoria/${categoria}`)
+        }
+
+    }
+
+    const handlePreciosChange = (event) => { //maneja el enrutado cuando seleccionas algo en el filtro de precios 
+
+        const porPrecio = event.target.value;
+        if (porPrecio === 'Aleatorio') {
+            navigate(categoryId ? `/Categoria/${categoryId}` : '/Tienda');
+        } else {
+            navigate(categoryId ? `/Categoria/${categoryId}/${porPrecio}` : `/Tienda/${porPrecio}`)
         }
 
     }
@@ -34,29 +44,27 @@ export const TiendaContainer = () => {
         setLoading(true)
 
         getProducts(categoryId)
-        .then(res => setProductos(res))
-        .catch(error => console.error(error))
-        .finally(() => setLoading(false))
+            .then(res => setProductos(res))
+            .catch(error => console.error(error))
+            .finally(() => setLoading(false))
 
     }, [categoryId])
 
-    const filtrados = productos.filter(e =>
-        e.nombre.toLowerCase().includes(nombreFiltrado.toLowerCase())
-    )
+    const filtrados = productos.filter(e => e.nombre.toLowerCase().includes(nombreFiltrado.toLowerCase()))
 
-    const ordenados = montoElegido ? [...filtrados].sort((a, b) => montoElegido === 'Menor' ? a.precio - b.precio : b.precio - a.precio) : filtrados
+    const ordenados = orden ? [...filtrados].sort((a, b) => orden === 'Menor-a-mayor' ? a.precio - b.precio : b.precio - a.precio) : filtrados
 
     return (
         <div className="tienda-img">
             <TiendaList
                 categoryId={categoryId}
                 handleCategoriaChange={handleCategoriaChange}
+                handlePreciosChange={handlePreciosChange}
                 nombreFiltrado={nombreFiltrado}
                 setNombreFiltrado={setNombreFiltrado}
-                montoElegido={montoElegido}
-                setMontoElegido={setMontoElegido}
                 loading={loading}
                 filtrados={filtrados}
+                orden={orden}
                 ordenados={ordenados} />
         </div>
     )

@@ -47,6 +47,7 @@ a {
 
 a:hover {
     transform: scale(1.08);
+    color: white;
 }
 
 .list-header h1,
@@ -87,12 +88,8 @@ a:hover {
 }
 
 .icono-carrito {
+    color: rgb(255, 255, 255);
     width: 20px;
     height: 20px;
-}
-
-.icono {
-    width: 60px;
-    height: 60px;
-    border-radius: 18%;
+    fill: rgb(145, 144, 144);
 }
