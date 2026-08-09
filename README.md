@@ -4,7 +4,7 @@ Proyecto desarrollado como entrega final del curso de React JS en Coderhouse.
 
 ## Demo
 
-[Ver proyecto](https://tierra-viva.netlify.app/) 
+[Ver proyecto](https://tierra-viva-ehlu.vercel.app/) 
 
 ## Descripción:
 
