@@ -1,57 +1,106 @@
-# Tierra Viva 
+# Tierra Viva
 
-Proyecto desarrollado como entrega final del curso de React JS en Coderhouse.
+Proyecto desarrollado como entrega final del curso de React JS en CoderHouse.
 
 ## Demo
 
-[Ver proyecto](https://tierra-viva-ehlu.vercel.app/) 
+[Ver proyecto](https://tierra-viva-ehlu.vercel.app/)
 
-## Descripción:
+## Descripción
 
-Tierra Viva es una Single Page Application (SPA) de e-commerce enfocada en la venta de plantas. La aplicación permite a los usuarios explorar un catálogo dinámico extraído de una base de datos en la nube, gestionar un carrito de compras de forma global y finalizar pedidos generando órdenes de compra en tiempo real. con un diseño limpio y funcional.
+Tierra Viva es una Single Page Application (SPA) de e-commerce enfocada en la venta de plantas. La aplicación permite a los usuarios explorar un catálogo dinámico extraído de una base de datos en la nube, gestionar un carrito de compras de forma global y finalizar pedidos generando órdenes de compra en tiempo real, con un diseño limpio y funcional.
 
-## Funcionalidades:
+## Funcionalidades
 
-- Catálogo Dinámico: Visualización de productos obtenida desde Firebase Firestore.
+- **Catálogo dinámico**: visualización de productos obtenida desde Firebase Firestore.
+- **Navegación SPA**: rutas dinámicas con `react-router-dom` para navegar sin recargar el navegador.
+- **Filtrado por categorías**: clasificación de plantas (interior / exterior) mediante rutas dinámicas.
+- **Detalle de producto**: vista profunda de cada especie (riego, iluminación y descripción) usando parámetros de URL.
+- **Carrito de compras global**: agregar, sumar, restar y eliminar productos unitariamente, con persistencia y cálculo de totales automático.
+- **Gestión de stock**: renderizado condicional que deshabilita el botón de compra cuando no hay disponibilidad.
+- **Checkout y órdenes**: formulario con validación que genera una orden de compra en Firestore, devolviendo un ID de seguimiento al usuario.
+- **Experiencia de usuario**: loaders durante la carga de datos, notificaciones visuales de confirmación, y carrito tipo drawer (menú lateral) para no interrumpir la navegación.
 
-- Navegación SPA: Implementación de rutas dinámicas con react-router-dom para navegar sin recargar el navegador.
-
-- Filtrado por Categorías: Clasificación de plantas (Interior / Exterior) mediante rutas dinámicas.
-
-- Detalle de Producto: Vista profunda de cada especie (riego, iluminación y descripción) utilizando parámetros de URL.
-
-- Carrito de Compras Global: - Agregar, sumar, restar y eliminar productos unitariamente.
-
-- Persistencia de datos y cálculo de totales automáticos.
-
-- Gestión de Stock: Renderizado condicional que deshabilita el botón de compra cuando no hay disponibilidad.
-
-- Checkout y Órdenes: Formulario de validación para generar una orden de compra en Firestore, devolviendo un ID de seguimiento al usuario.
-
-- Experiencia de Usuario (UX):
-
-- Loaders durante la carga de datos.
-
-- Notificaciones visuales de confirmación.
-
-- Carrito tipo Drawer (menú lateral) para no interrumpir la navegación.
-
-## Tecnologías utilizadas:
+## Tecnologías utilizadas
 
 - React.js (Vite)
-
-- React Router DOM (Navegación)
-
-- Context API (Estado Global)
-
+- React Router DOM (navegación)
+- Context API (estado global)
 - Firebase / Firestore (BaaS)
-
-- HTML5 & CSS3 
-
+- HTML5 & CSS3
 - localStorage
-
 - Toastify
+- React Icons / FontAwesome
+- Variables de entorno (`.env`) para proteger credenciales de Firebase en el deploy
 
-- React Icons / FontAwesome (Iconografía)
+## Instalación y uso local
 
-- Variables de Entorno (.env): Implementación de variables para la protección de credenciales de Firebase en el deploy.
+### Requisitos previos
+
+- Node.js v18 o superior
+- Una base de datos en Firebase Firestore (o usar la propia)
+
+### Pasos
+
+1. Cloná el repositorio
+
+```bash
+git clone https://github.com/JuanAliAmid/Tierra-viva.git
+cd Tierra-viva
+```
+
+2. Instalá las dependencias
+
+```bash
+npm install
+```
+
+3. Creá un archivo `.env` en la raíz con tus credenciales de Firebase:
+
+```
+VITE_FIREBASE_API_KEY=tu_api_key
+VITE_FIREBASE_AUTH_DOMAIN=tu_auth_domain
+VITE_FIREBASE_PROJECT_ID=tu_project_id
+VITE_FIREBASE_STORAGE_BUCKET=tu_storage_bucket
+VITE_FIREBASE_MESSAGING_SENDER_ID=tu_sender_id
+VITE_FIREBASE_APP_ID=tu_app_id
+```
+
+4. Levantá el servidor de desarrollo:
+
+```bash
+npm run dev
+```
+
+5. Abrí en el navegador la URL que indique la terminal (por defecto `http://localhost:5173`).
+
+## Estructura del proyecto
+
+```
+src/
+├── components/
+│   ├── Carrito/          # Carrito global y drawer lateral
+│   ├── Header/            # Navegación principal
+│   ├── ItemDetail/         # Cards y detalle de producto
+│   ├── TiendaList/         # Listado del catálogo
+│   ├── NotFound.jsx        # Página 404
+│   └── firebase/           # Configuración de Firebase
+├── context/
+│   └── CartContext.jsx     # Estado global del carrito (Context API)
+├── pages/
+│   ├── Home/
+│   ├── Tienda/
+│   ├── ItemDetail/
+│   └── CheckoutForm/        # Formulario y generación de orden
+├── services/
+│   └── firestore/           # Consultas a Firestore
+├── App.jsx
+└── main.jsx
+```
+
+## Desafíos
+
+- Sincronizar el estado global del carrito entre componentes desacoplados usando Context API.
+- Persistir el carrito y recalcular totales de forma consistente ante cada cambio de cantidad.
+- Modelar rutas dinámicas por categoría y por producto (`:id`) manteniendo el catálogo filtrable.
+- Proteger las credenciales de Firebase mediante variables de entorno tanto en desarrollo como en el deploy.

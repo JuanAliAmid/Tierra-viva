@@ -20,5 +20,5 @@ export const CardsCarrito = ({ restarProductos, sumarProductos, eliminarProducto
          </div>
       </li>
 
-   )
-}
+   );
+};
